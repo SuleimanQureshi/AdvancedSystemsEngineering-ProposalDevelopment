@@ -1,0 +1,107 @@
+site_name: AESPD Deliverables
+site_description: Advanced Systems Engineering – Proposal Development deliverables
+site_url: https://example.github.io/AESPD_Documentation/
+repo_url: https://github.com/example/AESPD_Documentation
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.keys
+
+plugins:
+  - search
+  - table-reader
+  - glightbox
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+
+nav:
+  - Home: index.md
+  - Stage 1 – Requirements:
+      - Overview: stages/1-requirements/index.md
+      - D1 · List of Stakeholders: stages/1-requirements/d1-list-of-stakeholders.md
+      - D2 · Context Diagram: stages/1-requirements/d2-context-diagram.md
+      - D3 · Stakeholder Requirements Document: stages/1-requirements/d3-stakeholder-requirements-document.md
+      - D4 · High-Level Action Diagrams: stages/1-requirements/d4-high-level-action-diagrams.md
+      - D5 · Verification Requirements (Stakeholder): stages/1-requirements/d5-verification-requirements-document-for-stakeholder-requirements.md
+  - Stage 2 – System Concept:
+      - Overview: stages/2-system-concept/index.md
+      - D1 · Assumption Mapping & Design Space: stages/2-system-concept/d1-assumption-mapping-design-space.md
+      - D2 · Functional Concept Fragments: stages/2-system-concept/d2-narrative-description-of-functional-concept-fragments.md
+      - D3 · System Requirements: stages/2-system-concept/d3-system-requirements.md
+      - D4 · Verification Requirements (System): stages/2-system-concept/d4-verification-requirements-document-for-system-requirements.md
+  - Stage 3 – Stage Synthesis:
+      - Overview: stages/3-stage-synthesis/index.md
+      - D1 · Low Level Action Diagram: stages/3-stage-synthesis/d1-low-level-action-diagram.md
+      - D2 · Physical I/O and Asset Diagram: stages/3-stage-synthesis/d2-physical-i-o-and-asset-diagram.md
+      - D3 · Functional Requirements Document (FRD): stages/3-stage-synthesis/d3-functional-requirements-document-frd.md
+      - D4 · Trade Studies and Associated Risks: stages/3-stage-synthesis/d4-trade-studies-and-associated-risks.md
+      - D5 · System Requirements Document (SRD): stages/3-stage-synthesis/d5-system-requirements-document-srd.md
+      - D6 · Verification Requirements: stages/3-stage-synthesis/d6-verification-requirements.md
+      - D7 · Trade Studies (Component Selection): stages/3-stage-synthesis/d7-trade-studies-and-associated-risks-component-selection.md
+      - D8 · Design Analysis Report & BOM: stages/3-stage-synthesis/d8-design-analysis-report-and-initial-bill-of-materials-bom.md
+      - D9 · Level 1 and Level 2 Planning: stages/3-stage-synthesis/d9-level-1-and-level-2-planning.md
+  - Stage 4 – Later Deliverables:
+      - Overview: stages/4-later-deliverables/index.md
+      - D1 · Preliminary Design Review (PDR) Document: stages/4-later-deliverables/d1-preliminary-design-review-pdr-document.md
+
+extra:
+  generator: false

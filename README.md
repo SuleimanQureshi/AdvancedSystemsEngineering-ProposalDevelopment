@@ -1,1 +1,49 @@
-# AdvancedSystemsEngineering-ProposalDevelopment
+# AESPD Deliverables
+
+Advanced Systems Engineering – Proposal Development. Source for the
+deliverables documentation site.
+
+**Live site:** _(will be added once GitHub Pages is enabled)_
+
+## What lives here
+
+- `docs/` – the markdown content rendered as the public site
+  - `stages/1-requirements/` through `stages/4-later-deliverables/`
+  - `assets/images/`, `assets/diagrams/`, `assets/data/`
+- `source/` – immutable reference: the original `.docx` the site was
+  migrated from
+- `mkdocs.yml` – site configuration (theme, nav, plugins)
+- `CLAUDE.md` – conventions any AI assistant must follow when editing
+- `.github/workflows/deploy.yml` – builds and publishes the site on push
+  to `main`
+
+## Local preview
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+mkdocs serve
+```
+
+Open `http://127.0.0.1:8000` — the site hot-reloads on every file save.
+
+## Editing workflow
+
+1. `git checkout main && git pull`
+2. `git checkout -b edit/<short-description>` (one branch per editing
+   session; not for review, just save-state)
+3. Run `mkdocs serve` in one terminal, open Claude Code in another, edit
+4. Commit to the branch as save points (`git add` + `git commit`)
+5. When satisfied, publish: `git checkout main && git merge edit/<branch>
+   && git push`
+6. The GitHub Action deploys the site (~60 s)
+
+The branch is the editor's private workspace; nothing reaches the public
+site until the push to `main`.
+
+## Conventions
+
+See [`CLAUDE.md`](CLAUDE.md) for the file/naming conventions, comment
+format, table tiers, and image/diagram rules. Both human editors and AI
+assistants should follow it.
